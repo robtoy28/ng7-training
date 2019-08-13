@@ -1,0 +1,14 @@
+<h1>
+  Home
+</h1>
+
+<div *ngIf="users">
+  <ul *ngFor="let user of users.data">
+    <li *ngIf="user.id >= 1">
+      <div>
+      <img src="{{user.avatar}}" alt="">
+      <p>{{user.id}} - {{user.first_name}} {{user.last_name}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
