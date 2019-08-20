@@ -6,11 +6,13 @@
     <input type="text" formControlName="task" (keyup.enter)="submit">
   </label>
   <input type="submit" value="Add To List" class="cta">
-
+  <div *ngIf="submitted && taskForm.controls.task.errors">
+    <div class="error" *ngIf="taskForm.controls.task.errors.required">Task Name is Required</div>
+  </div>
 </form>
 
 Number of Tasks: {{tasklist.length}}
-<div *ngIf="tasklist.length > 0"> 
+<div *ngIf="tasklist.length > 0">
   <ul>
     <div *ngFor="let item of tasklist index as i">
       <li>Item: {{item}}</li> <button (click)="delete(i)">Delete</button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -10,10 +10,11 @@ export class TodoComponent implements OnInit {
 
   tasklist = [];
   taskForm: FormGroup;
+  submitted = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.taskForm = this.formBuilder.group({
-      task: ['',],
+      task: ['', Validators.required],
     })
   }
 
@@ -22,9 +23,16 @@ export class TodoComponent implements OnInit {
   }
 
   onsubmit(e) {
+    this.submitted = true;
+    if (this.taskForm.invalid) {
+      console.log('taskform invalid');
+      return;
+    }
     const task = this.taskForm.value.task;
     this.tasklist.push(task);
     this.taskForm.reset();
+    this.submitted = false;
+
   }
 
   delete(indexToBeDeleted) {
