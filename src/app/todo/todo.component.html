@@ -12,11 +12,13 @@
 </form>
 
 Number of Tasks: {{tasklist.length}}
-<div *ngIf="tasklist.length > 0">
-  <ul>
-    <div *ngFor="let item of tasklist index as i">
-      <li>Item: {{item}}</li> <button (click)="delete(i)">Delete</button>
 
-    </div>
-  </ul>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngIf="tasklist.length > 0">
+    <ul>
+      <div *ngFor="let item of tasklist index as i" class="pop" cdkDrag>
+        <li>Item: {{item}}</li> <button (click)="delete(i)">Delete</button>
+      </div>
+    </ul>
+  </div>
 </div>
