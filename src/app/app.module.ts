@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
+import { TableauComponent } from './tableau/tableau.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -20,7 +22,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    TodoComponent
+    TodoComponent,
+    TableauComponent
   ],
   imports: [
     BrowserModule,
