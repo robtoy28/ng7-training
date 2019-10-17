@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { TodoComponent } from './todo/todo.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    LoggerModule.forRoot(environment.logging)
   ],
   providers: [],
   bootstrap: [AppComponent]

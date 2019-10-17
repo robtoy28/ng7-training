@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NGXLogger } from 'ngx-logger';
+
 
 declare var tableau: any;
 
@@ -15,7 +17,8 @@ export class TableauComponent implements OnInit {
   tableauVizs = ['https://public.tableau.com/views/WorldIndicators/GDPpercapita',
                  'http://public.tableau.com/views/RegionalSampleWorkbook/Storms' ];
 
-  constructor() {
+  constructor(private logger: NGXLogger) {
+    this.logger.debug('Debuggin brutha');
   }
 
 
@@ -53,7 +56,19 @@ export class TableauComponent implements OnInit {
 
   onsubmit(){
     this.initializeViz(this.tableauVizs[this.toggleSelected()]);
+  }
 
+  log(level) {
+    switch(level) {
+      case 0: {
+        this.logger.debug('This is a DEBUG');
+        break;
+      }
+      case 4: {
+        this.logger.error('This is an ERROR');
+      }
+      break;
+    }
   }
 
   toggleSelected = () => {
