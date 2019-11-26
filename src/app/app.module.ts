@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { TableauComponent } from './tableau/tableau.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { environment } from './../environments/environment';
+import { GmapComponent } from './gmap/gmap.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { environment } from './../environments/environment';
     ContactComponent,
     HomeComponent,
     TodoComponent,
-    TableauComponent
+    TableauComponent,
+    GmapComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { environment } from './../environments/environment';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DragDropModule,
+    GoogleMapsModule,
     LoggerModule.forRoot(environment.logging)
   ],
   providers: [],
