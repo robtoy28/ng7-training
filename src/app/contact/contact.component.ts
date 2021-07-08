@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,7 @@ export class ContactComponent implements OnInit {
   submitted = false;
   success = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, public dataService: DataService) {
     this.messageForm = this.formBuilder.group({
       name: ['', Validators.required],
       message: ['', Validators.required]

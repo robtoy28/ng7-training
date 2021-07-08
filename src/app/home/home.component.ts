@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+// import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,15 @@ export class HomeComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getUsers().subscribe(data => {
-      this.users = data;
-    })
+    this.fetchData();
   }
 
+  private async fetchData(){
+    const usersObj = await this.data.getUsers().toPromise();
+    this.users = usersObj;
+
+    // new way to do toPromise()
+    // const users$ = this.data.getUsers();
+    // this.users = await lastValueFrom(users$);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
+import { DataService } from '../data.service';
 
 
 declare var tableau: any;
@@ -17,7 +18,7 @@ export class TableauComponent implements OnInit {
   tableauVizs = ['https://public.tableau.com/views/WorldIndicators/GDPpercapita',
                  'http://public.tableau.com/views/RegionalSampleWorkbook/Storms' ];
 
-  constructor(private logger: NGXLogger) {
+  constructor(private logger: NGXLogger, public dataService: DataService) {
     this.logger.debug('Debuggin brutha');
   }
 

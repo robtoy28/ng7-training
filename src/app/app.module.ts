@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { environment } from './../environments/environment';
 import { GmapComponent } from './gmap/gmap.component';
 
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { BarComponent } from './bar/bar.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +33,8 @@ import { GmapComponent } from './gmap/gmap.component';
     HomeComponent,
     TodoComponent,
     TableauComponent,
-    GmapComponent
+    GmapComponent,
+    BarComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,9 @@ import { GmapComponent } from './gmap/gmap.component';
     BrowserAnimationsModule,
     DragDropModule,
     GoogleMapsModule,
-    LoggerModule.forRoot(environment.logging)
+    LoggerModule.forRoot(environment.logging),
+    OAuthModule.forRoot(),
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

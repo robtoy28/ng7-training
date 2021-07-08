@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { TodoComponent } from './todo/todo.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { GmapComponent } from './gmap/gmap.component';
+import { BarComponent } from './bar/bar.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'todo', component: TodoComponent},
   { path: 'tableau', component: TableauComponent},
   { path: 'map', component: GmapComponent},
+  { path: 'bar', component: BarComponent},
+
 
 ];
 

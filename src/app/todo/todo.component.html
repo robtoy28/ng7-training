@@ -16,8 +16,8 @@ Number of Tasks: {{tasklist.length}}
 <div cdkDropList (cdkDropListDropped)="drop($event)">
   <div *ngIf="tasklist.length > 0">
     <ul>
-      <div *ngFor="let item of tasklist index as i" class="pop" cdkDrag>
-        <li>Item: {{item}}</li> <button (click)="delete(i)">Delete</button>
+      <div *ngFor="let item of tasklist index as index" class="pop" cdkDrag>
+        <li>Item: {{item}}</li> <button (click)="delete(index)">Delete</button>
       </div>
     </ul>
   </div>

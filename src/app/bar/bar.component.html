@@ -1,0 +1,23 @@
+<div class="bar-container">
+
+    <header>
+        <h1>D3 fun</h1>
+    </header>
+    
+    <div class="chart-nav-container">
+        <button (click)="showChart('mgr-levels')">Atlanta SI Manager Levels</button>
+        <button (click)="showChart('clients-by-office')">Atlanta SI Clients</button>    
+    </div>
+    
+    <div class="chart-container" [ngClass]="{'show': divId === 'mgr-levels', 'hide': divId !== 'mgr-levels' }">
+      <h2>Atlanta SI Manager Levels</h2>
+      <figure id="mgr-levels"></figure>
+    </div>
+    
+    <div class="chart-container" [ngClass]="{'show': divId === 'clients-by-office'}">
+        <h2>Atlanta SI Clients</h2>
+    
+      <figure id="clients-by-office"></figure>
+    </div> 
+
+</div>

@@ -4,12 +4,13 @@
   </div>
     <nav>
         <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
-            <li><a routerLink="/todo">Todo List</a></li>
-            <li><a routerLink="/tableau">Tableau Page</a></li>
-            <li><a routerLink="/map">Google Map Page</a></li>
+            <li><a routerLink="/" (click)="setTitle('Home!')">Home</a></li>
+            <li><a routerLink="/about" (click)="setTitle('About')">About</a></li>
+            <li><a routerLink="/contact" (click)="setTitle('Contact')">Contact</a></li>
+            <li><a routerLink="/todo" (click)="setTitle('To Do List')">Todo List</a></li>
+            <li><a routerLink="/tableau" (click)="setTitle('Tableau')">Tableau Page</a></li>
+            <li><a routerLink="/map" (click)="setTitle('Google Map Page')">Google Map Page</a></li>
+            <li><a routerLink="/bar" (click)="setTitle('D3 Charts')">D3 Page</a></li>
 
         </ul>
     </nav>

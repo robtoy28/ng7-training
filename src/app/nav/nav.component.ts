@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class NavComponent implements OnInit {
 
   appTitle: string= 'My POC App';
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private titleService: Title) { }
 
   ngOnInit() {
     const firstParam: string = this.route.snapshot.queryParamMap.get('test');
@@ -19,6 +21,10 @@ export class NavComponent implements OnInit {
         //console.log(params.test);
 
     });
+  }
+
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 
 }

@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
+  public myData = '';
+
   constructor(private http: HttpClient) { }
 
   getUsers() {
